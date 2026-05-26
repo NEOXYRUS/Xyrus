@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xyrus James Servidor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="forest-canvas"></canvas>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- TOAST -->
+<div id="toast">✅ Opening Gmail, your message is ready to send!</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- FLOATING RESUME -->
+<a id="resume-float" href="Xyrus_James_Servidor_Resume.pdf" download title="Download My Resume">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+    <polyline points="7 10 12 15 17 10"/>
+    <line x1="12" y1="15" x2="12" y2="3"/>
+  </svg>
+  <span class="resume-label">Resume</span>
+</a>
+
+<!-- NAV -->
+<nav id="nav">
+  <!-- Logo -->
+  <a href="#hero" class="nav-logo">
+    <img src="xyrusprof.jpg" alt="Xyrus">
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+
+    <!-- About dropdown -->
+    <li class="nav-item-drop">
+      <a href="#about" class="nav-drop-toggle">
+        About
+        <svg class="drop-arrow" width="10" height="10" viewBox="0 0 10 10">
+          <polyline points="2,3 5,7 8,3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="nav-dropdown">
+        <a href="about.html"      class="drop-item"><span class="drop-icon">👤</span>About Me</a>
+        <a href="about.html#background" class="drop-item"><span class="drop-icon">🌱</span>Background</a>
+        <a href="about.html#skills"     class="drop-item"><span class="drop-icon">⚡</span>Skills</a>
+        <a href="about.html#resume-download"     class="drop-item"><span class="drop-icon">📄</span>Resume</a>
+      </div>
+    </li>
+
+    <!-- Services dropdown -->
+    <li class="nav-item-drop">
+      <a href="#services" class="nav-drop-toggle">
+        Services
+        <svg class="drop-arrow" width="10" height="10" viewBox="0 0 10 10">
+          <polyline points="2,3 5,7 8,3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <div class="nav-dropdown">
+        <a href="Services.html" class="drop-item"><span class="drop-icon">🗂</span>All Services</a>
+        <a href="Services.html#tools"  class="drop-item"><span class="drop-icon">🛠️</span>Tools</a>
+         <a href="Services.html#process"  class="drop-item"><span class="drop-icon">🔄</span>My Process</a>
+      </div>
+    </li>
+
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="Contact.html" class="nav-cta">Hire Me</a></li>
+  </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#hero"       onclick="closeMob()">Home</a>
+  <div class="mob-group-label">About</div>
+  <a href="About.html"      onclick="closeMob()" class="mob-sub">About Me</a>
+  <a href="About.html#background" onclick="closeMob()" class="mob-sub">Background</a>
+  <a href="About.html#skills"     onclick="closeMob()" class="mob-sub">Skills</a>
+  <a href="about.html#resume-download" onclick="closeMob()" class="mob-sub">📄 Resume</a>
+  <div class="mob-group-label">Services</div>
+  <a href="Services.html"   onclick="closeMob()" class="mob-sub">All Services</a>
+  <a href="Services.html#tools"      onclick="closeMob()" class="mob-sub">Tools</a>
+  <a href="Services.html#process"    onclick="closeMob()" class="mob-sub">My Process</a>
+  <a href="#faq"        onclick="closeMob()">FAQ</a>
+  <a href="Contact.html" class="nav-cta-m" onclick="closeMob()">Hire Me</a>
+</div>
+
+<!-- AIDA BANNER -->
+<div id="aida-banner">
+  <div class="aida-toggle-bar" onclick="toggleAida()">
+    <span class="aida-toggle-label">📋 Free 7-Days VA Offer Inside</span>
+    <span class="aida-toggle-icon" id="aida-icon">▼</span>
+  </div>
+  <div class="aida-inner" id="aida-content">
+    <div class="aida-content-inner">
+      <h2 class="aida-headline">
+        I Know Your Time Is Limited<br>So Let Me Get Straight To The Point.
+      </h2>
+      <p class="aida-interest">
+        My name is <strong style="color:#fff;">Xyrus James Servidor</strong> a Virtual Assistant
+        from the Philippines specializing in AI-powered support, content creation, email management,
+        and administrative assistance. I help businesses stay organized, save time, and handle
+        daily tasks with focused attention, clear communication, and dependable execution.
+      </p>
+      <div class="aida-highlight">
+        I'm Not Here To Take Your Money.<br>I'm Here To Earn Your Trust First.
+      </div>
+      <p class="aida-desire">
+        To make things risk-free, I offer a
+        <strong style="color:var(--accent-light);">7-day trial period</strong>
+        3 hours daily, completely free so you can evaluate my work firsthand
+        before making any commitment.
+      </p>
+ 
+      <p class="aida-desire">
+        If you need someone dependable to support your business and help lighten
+        your workload, I'm ready to get started.
+      </p>
+      <div class="aida-action">
+        <a href="contact.html" class="btn-primary" onclick="closeAida()">Let's Talk</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left reveal">
+    <div class="available-pill">Available for Work</div>
+    <h1 class="hero-name">Xyrus <em>James</em><br>Servidor</h1>
+    <p class="hero-subtitle">AI-Powered Virtual Assistant</p>
+    <p class="hero-desc">
+      Hi, I'm Xyrus a 17-year-old Virtual Assistant from Zamboanga Peninsula,
+      Philippines. I've been working online since age 13, building real skills in
+      content creation, research, and AI-powered workflows. I help international
+      clients stay organized, handle daily tasks, and work smarter using modern tools.
+    </p>
+    <div class="hero-btns">
+      <a href="contact.html" class="btn-primary">✉ Work With Me</a>
+      <a href="services.html" class="btn-secondary">See My Services →</a>
+    </div>
+  </div>
+  <div class="hero-right reveal">
+    <div class="photo-frame-wrap">
+      <div class="spin-ring"></div>
+      <div class="photo-frame">
+        <img src="xyrusprof.jpg" alt="Xyrus James Servidor"
+             onerror="this.style.background='linear-gradient(135deg,#f0e8dc,#d4c4b0)'">
+      </div>
+      <div class="float-card">
+        <div class="float-card-icon">🤖</div>
+        <div>
+          <div style="font-size:.7rem;color:var(--text-muted);font-weight:500">Tools Mastered</div>
+          <div>7+ AI Tools</div>
+        </div>
+      </div>
+      <div class="float-card">
+        <div class="float-card-icon">🌏</div>
+        <div>
+          <div style="font-size:.7rem;color:var(--text-muted);font-weight:500">Working Style</div>
+          <div>Remote Friendly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marquee-track">
+    <div class="marquee-item">AI-Powered Support<span class="dot"></span></div>
+    <div class="marquee-item">Content Creation<span class="dot"></span></div>
+    <div class="marquee-item">Email Management<span class="dot"></span></div>
+    <div class="marquee-item">Social Media<span class="dot"></span></div>
+    <div class="marquee-item">Data Research<span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">ChatGPT</span><span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">Canva</span><span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">Gemini</span><span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">Claude</span><span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">Perplexity</span><span class="dot"></span></div>
+    <div class="marquee-item">Virtual Assistant<span class="dot"></span></div>
+    <div class="marquee-item">Zamboanga Peninsula<span class="dot"></span></div>
+    <div class="marquee-item">AI-Powered Support<span class="dot"></span></div>
+    <div class="marquee-item">Content Creation<span class="dot"></span></div>
+    <div class="marquee-item">Email Management<span class="dot"></span></div>
+    <div class="marquee-item">Social Media<span class="dot"></span></div>
+    <div class="marquee-item">Data Research<span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">ChatGPT</span><span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">Canva</span><span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">Gemini</span><span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">Claude</span><span class="dot"></span></div>
+    <div class="marquee-item accent"><span class="accent">Perplexity</span><span class="dot"></span></div>
+    <div class="marquee-item">Virtual Assistant<span class="dot"></span></div>
+    <div class="marquee-item">Zamboanga Peninsula<span class="dot"></span></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-photo-card reveal">
+      <img src="xyrusprof.jpg" alt="Xyrus James Servidor"
+           onerror="this.style.background='linear-gradient(135deg,#f0e8dc,#d4c4b0)'">
+    </div>
+    <div class="reveal">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">A friendly hand for<br><em>your daily workflow.</em></h2>
+      <p class="section-desc" style="margin-bottom:1.5rem">
+        I'm a tech-savvy Virtual Assistant with a TVL-ICT background and an NC2
+        certification in Computer Systems Servicing. I've been earning and working
+        online since Grade 2022 creating content, managing tasks, and using AI tools
+        daily to deliver quality results. I work with attention to detail, clear
+        communication, and a genuine commitment to getting things done right.
+      </p>
+      <div class="about-details">
+        <div class="detail-item">
+          <span class="detail-icon">📍</span>
+          <div><span class="detail-label">Location</span><span class="detail-value">Zamboanga Peninsula, PH</span></div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">✉️</span>
+          <div><span class="detail-label">Email</span><span class="detail-value">xy.servidor.va@gmail.com</span></div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">🕐</span>
+          <div><span class="detail-label">Availability</span><span class="detail-value">Open to Work</span></div>
+        </div>
+        <div class="detail-item">
+          <span class="detail-icon">🌐</span>
+          <div><span class="detail-label">Work Mode</span><span class="detail-value">Remote / Online</span></div>
+        </div>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card"><div class="stat-num">7+</div><div class="stat-label">AI Tools</div></div>
+        <div class="stat-card"><div class="stat-num">7</div><div class="stat-label">Services</div></div>
+        <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Commitment</div></div>
+      </div>
+      <div style="margin-top:2rem">
+        <a href="about.html" class="btn-primary">Full Profile →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div style="text-align:center;margin-bottom:3.5rem">
+    <div class="section-tag reveal" style="justify-content:center">FAQ</div>
+    <h2 class="section-title reveal">Questions you<br><em>might be thinking.</em></h2>
+    <p class="section-desc reveal" style="margin:0 auto;text-align:center">
+      Honest answers based on who I actually am and how I actually work.
+    </p>
+  </div>
+  <div class="faq-grid">
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>You're 17 with no formal job experience why should I trust you with my business tasks?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Fair question. I've been working online since I was 13, earning real money through NFT gaming and completing freelance content and design tasks on DaoLabs in 2022. I built this entire portfolio website from scratch, passed the TESDA NC2 Computer Systems Servicing assessment as the only qualifier out of 27, and led research projects every year from Grade 7 through 12. Age doesn't define capability results do. That's why I offer 7 free trial days so you can judge the work yourself before committing to anything.</p></div>
+    </div>
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What exactly does the 7-day free trial include?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>3 hours of real work per day for 7 days completely free, no contracts, no payment required. You give me actual tasks from your list and I handle them properly. It's not a demo or a simulation it's real output you can use. My goal is simple: let the work speak before asking for anything in return.</p></div>
+    </div>
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What timezone are you in and how flexible are you?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>I'm based in the Philippines (PHT, UTC+8) but I'm fully flexible with my schedule. I'm open to working with US, UK, Australian, and other international clients regardless of timezone. I plan my day every night and wake up with a clear schedule so adjusting my hours to overlap with yours is not a problem at all.</p></div>
+    </div>
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How do you communicate and give updates on tasks?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Whatever platform works best for you Telegram, Gmail, Slack, Discord, or anything else you prefer. I adapt to your workflow, not the other way around. I give clear task updates so you're never left wondering where things stand, and I always respond within 24 hours maximum usually much faster.</p></div>
+    </div>
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What AI tools do you actually use and how?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>I use Claude, ChatGPT, Gemini, and Perplexity AI every single day not just occasionally. I use them to research faster, write better content, organize information, and improve the quality of everything I deliver. I've been self-teaching AI workflows since 2024 and I even used ChatGPT to help me build a working QR code attendance system for my research project when I didn't know how to code. I use AI as a tool to work smarter every output still goes through my own judgment before it reaches you.</p></div>
+    </div>
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Is my information and business data safe with you?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Absolutely. Everything you share with me stays strictly between us. I treat client information with the same seriousness I'd want for my own. I'm happy to sign a simple NDA if that gives you peace of mind just let me know and I'll arrange it before we start.</p></div>
+    </div>
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>What if the work doesn't meet my expectations?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Tell me directly and I'll fix it no excuses, no defensiveness. I was a research leader and group leader in my Senior High School year precisely because I know how to take feedback and turn it into better output. Revisions during the free trial period are always included. Your honest feedback is how I improve and that's something I genuinely welcome.</p></div>
+    </div>
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>Are you technically reliable for remote work?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Yes, I have a stable fiber internet connection with a Globe mobile data hotspot as backup, a UPS unit to keep my desktop running during power interruptions, and a full remote work setup with headset and webcam. I have an NC2 certification in Computer Systems Servicing so I understand my own equipment and can troubleshoot issues independently without downtime affecting your tasks.</p></div>
+    </div>
+ 
+    <div class="faq-item reveal">
+      <button class="faq-q" onclick="toggleFaq(this)">
+        <span>How do I get started?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a"><p>Fill out the <a href="contact.html" style="color:var(--accent-bright)">contact form</a> or message me directly on Telegram or Gmail. Tell me what tasks you need help with and I'll respond within 24 hours. We'll have a quick discovery call to align on your needs, and then we can start the 7-day free trial right away no paperwork, no payment, no pressure.</p></div>
+    </div>
+ 
+  </div>
+  <div style="text-align:center;margin-top:3rem" class="reveal">
+    <p style="color:var(--text-muted);font-size:.9rem;margin-bottom:1.2rem">Still have a question not listed here?</p>
+    <a href="contact.html" class="btn-primary">Ask Me Directly →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">XJS</div>
+      <p class="footer-tagline">AI-Powered Virtual Assistant<br>from Zamboanga Peninsula, Philippines.<br>Helping your business run smoother.</p>
+      <div class="footer-socials" style="margin-top:1.2rem">
+        <a href="https://www.facebook.com/ne0xyrus" target="_blank" class="footer-social">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/xyrus-james-servidor-483381267/" target="_blank" class="footer-social">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://www.instagram.com/xyruuusssss" target="_blank" class="footer-social">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://x.com/neoxyrus7" target="_blank" class="footer-social">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://t.me/NEOXYRUS" target="_blank" class="footer-social">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.801l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.758z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services.html">Email Management</a></li>
+        <li><a href="services.html">Admin & Scheduling</a></li>
+        <li><a href="services.html">Content Creation</a></li>
+        <li><a href="services.html">Social Media</a></li>
+        <li><a href="services.html">Data Research</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get in Touch</h4>
+      <ul>
+        <li><a href="mailto:xy.servidor.va@gmail.com">xy.servidor.va@gmail.com</a></li>
+        <li><a href="contact.html">Send a Message</a></li>
+        <li><a href="about.html">Zamboanga Peninsula, PH</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Xyrus James Servidor. All rights reserved.</span>
+    <span>Built with love for great work.</span>
+  </div>
+</footer>
+
+<script src="js.js"></script>
+</body>
+</html>
