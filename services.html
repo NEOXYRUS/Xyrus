@@ -104,13 +104,19 @@
   </div>
 
   <div class="services-grid">
-    <div class="service-card reveal">
+
+    <div class="service-card reveal" onclick="openEmailModal()" style="cursor:pointer">
       <div class="service-num">01</div>
       <span class="service-icon">📧</span>
       <h3 class="service-title">Email Management</h3>
       <p class="service-desc">Tired of missing important emails or spending hours in your inbox? I keep everything sorted, replied to, and under control so you never miss a thing.</p>
-      <div class="service-tags"><span class="service-tag">Inbox Zero</span><span class="service-tag">Triage</span></div>
+      <div class="service-tags">
+        <span class="service-tag">Inbox Zero</span>
+        <span class="service-tag">Triage</span>
+        <span class="service-tag portfolio-tag">📂 View Samples</span>
+      </div>
     </div>
+
     <div class="service-card reveal">
       <div class="service-num">02</div>
       <span class="service-icon">📅</span>
@@ -118,6 +124,7 @@
       <p class="service-desc">Forget the back-and-forth of booking meetings and chasing reminders. I handle your calendar so your days stay organized and your mind stays clear.</p>
       <div class="service-tags"><span class="service-tag">Calendar</span><span class="service-tag">Admin</span></div>
     </div>
+
     <div class="service-card reveal">
       <div class="service-num">03</div>
       <span class="service-icon">✍️</span>
@@ -125,6 +132,7 @@
       <p class="service-desc">Staring at a blank screen trying to write captions? I create ready-to-post content, presentations, and written materials that sound like you, only better.</p>
       <div class="service-tags"><span class="service-tag">Copy</span><span class="service-tag">Canva</span></div>
     </div>
+
     <div class="service-card reveal">
       <div class="service-num">04</div>
       <span class="service-icon">📱</span>
@@ -132,6 +140,7 @@
       <p class="service-desc">Staying consistent online is hard when you're busy running a business. I handle your posting schedule so your brand stays active and people keep noticing you.</p>
       <div class="service-tags"><span class="service-tag">Scheduling</span><span class="service-tag">Engagement</span></div>
     </div>
+
     <div class="service-card reveal">
       <div class="service-num">05</div>
       <span class="service-icon">📊</span>
@@ -139,6 +148,7 @@
       <p class="service-desc">Need information gathered, organized, or cleaned up? I dig through the details so you get accurate, ready-to-use data without spending your own time on it.</p>
       <div class="service-tags"><span class="service-tag">Research</span><span class="service-tag">Sheets</span></div>
     </div>
+
     <div class="service-card reveal">
       <div class="service-num">06</div>
       <span class="service-icon">💬</span>
@@ -146,6 +156,7 @@
       <p class="service-desc">Your customers deserve fast, friendly replies. I handle inquiries professionally so every person who reaches out feels heard and taken care of.</p>
       <div class="service-tags"><span class="service-tag">Chat</span><span class="service-tag">Email</span></div>
     </div>
+
     <div class="service-card reveal">
       <div class="service-num">07</div>
       <span class="service-icon">📋</span>
@@ -153,6 +164,7 @@
       <p class="service-desc">Got a project that needs someone to keep things moving? I track tasks, deadlines, and team updates so nothing falls through the cracks and everything gets done on time.</p>
       <div class="service-tags"><span class="service-tag">Tasks</span><span class="service-tag">Deadlines</span><span class="service-tag">Coordination</span></div>
     </div>
+
   </div>
 </section>
 
@@ -305,6 +317,135 @@
     <span>Built with love for great work.</span>
   </div>
 </footer>
+
+<!-- EMAIL PORTFOLIO MODAL -->
+<div id="email-modal" class="portfolio-modal-overlay" onclick="closeEmailModal(event)">
+  <div class="portfolio-modal">
+ 
+    <button class="portfolio-modal-close" onclick="closeEmailModal()">✕</button>
+ 
+    <div class="portfolio-modal-header">
+      <div class="section-tag" style="justify-content:left">Email Management</div>
+      <h2 class="portfolio-modal-title">Sample<br><em>Works</em></h2>
+      <p class="portfolio-modal-sub">
+        A complete look at how I handle email management from inbox cleanup
+        to template setup, scheduling, and professional responses.
+      </p>
+    </div>
+ 
+    <div class="portfolio-samples-list">
+ 
+      <div class="portfolio-sample">
+        <div class="portfolio-sample-img-wrap" onclick="openLightbox(0)">
+          <img src="inboxorganize.png"
+               alt="Inbox Organization"
+               onerror="this.parentElement.classList.add('img-error')">
+          <div class="portfolio-sample-zoom-hint">🔍 Click to view fullscreen</div>
+        </div>
+        <div class="portfolio-sample-info">
+          <h3 class="portfolio-sample-title">Inbox Organization</h3>
+          <p class="portfolio-sample-desc">Transform cluttered inboxes into organized systems 
+            that help business owners stay productive, prioritize important conversations, 
+            and never miss critical emails..</p>
+        </div>
+        <div class="portfolio-sample-divider"></div>
+      </div>
+ 
+      <div class="portfolio-sample">
+        <div class="portfolio-sample-img-wrap" onclick="openLightbox(1)">
+          <img src="template.png"
+               alt="Email Templates"
+               onerror="this.parentElement.classList.add('img-error')">
+          <div class="portfolio-sample-zoom-hint">🔍 Click to view fullscreen</div>
+        </div>
+        <div class="portfolio-sample-info">
+          <h3 class="portfolio-sample-title">Email Templates</h3>
+          <p class="portfolio-sample-desc">Streamline communication with ready-to-use email templates 
+            that save time, improve consistency, and support faster response management.</p>
+        </div>
+        <div class="portfolio-sample-divider"></div>
+      </div>
+ 
+      <div class="portfolio-sample">
+        <div class="portfolio-sample-img-wrap" onclick="openLightbox(2)">
+          <img src="filtering.jpg"
+               alt="Filters & Automation"
+               onerror="this.parentElement.classList.add('img-error')">
+          <div class="portfolio-sample-zoom-hint">🔍 Click to view fullscreen</div>
+        </div>
+        <div class="portfolio-sample-info">
+          <h3 class="portfolio-sample-title">Filters & Automation</h3>
+          <p class="portfolio-sample-desc">Reduce inbox overwhelm through smart 
+            Gmail automation that automatically organizes incoming emails, saving time 
+            and improving workflow efficiency.</p>
+        </div>
+        <div class="portfolio-sample-divider"></div>
+      </div>
+ 
+      <div class="portfolio-sample">
+        <div class="portfolio-sample-img-wrap" onclick="openLightbox(3)">
+          <img src="calendar.png"
+               alt="Calendar Coordination"
+               onerror="this.parentElement.classList.add('img-error')">
+          <div class="portfolio-sample-zoom-hint">🔍 Click to view fullscreen</div>
+        </div>
+        <div class="portfolio-sample-info">
+          <h3 class="portfolio-sample-title">Calendar Coordination</h3>
+          <p class="portfolio-sample-desc">Keep schedules organized and meetings on track through 
+            professional calendar management, appointment booking, and Google Meet coordination.</p>
+        </div>
+        <div class="portfolio-sample-divider"></div>
+      </div>
+ 
+      <div class="portfolio-sample">
+        <div class="portfolio-sample-img-wrap" onclick="openLightbox(4)">
+          <img src="response.jpg"
+               alt="Professional Email Response"
+               onerror="this.parentElement.classList.add('img-error')">
+          <div class="portfolio-sample-zoom-hint">🔍 Click to view fullscreen</div>
+        </div>
+        <div class="portfolio-sample-info">
+          <h3 class="portfolio-sample-title">Professional Email Response</h3>
+          <p class="portfolio-sample-desc">Deliver prompt and professional email 
+            support that improves client satisfaction and ensures every 
+            important message receives the attention it deserves.</p>
+        </div>
+      </div>
+ 
+    </div>
+ 
+    <div class="portfolio-modal-footer">
+      <a href="contact.html" class="btn-primary" onclick="closeEmailModal()">✉ Work With Me</a>
+      <button class="btn-secondary" onclick="closeEmailModal()">Close</button>
+    </div>
+ 
+  </div>
+</div>
+ 
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightboxOnBg(event)">
+  <div class="lightbox-topbar">
+    <span class="lightbox-counter" id="lightbox-counter">1 / 5</span>
+    <div class="lightbox-controls">
+      <button class="lb-btn" onclick="lbZoomOut()" title="Zoom Out">−</button>
+      <button class="lb-btn" onclick="lbZoomReset()" title="Reset Zoom" id="lb-zoom-label">100%</button>
+      <button class="lb-btn" onclick="lbZoomIn()" title="Zoom In">+</button>
+      <button class="lb-btn lb-close" onclick="closeLightbox()" title="Close">✕</button>
+    </div>
+  </div>
+ 
+  <button class="lb-arrow lb-prev" onclick="lbPrev()">&#8592;</button>
+  <button class="lb-arrow lb-next" onclick="lbNext()">&#8594;</button>
+ 
+  <div class="lightbox-img-wrap" id="lb-img-wrap">
+    <img id="lb-img" src="" alt="" draggable="false">
+  </div>
+ 
+  <div class="lightbox-caption" id="lb-caption">
+    <span class="lb-cap-num" id="lb-cap-num">01</span>
+    <span class="lb-cap-title" id="lb-cap-title"></span>
+  </div>
+</div>
 
 <script src="js.js"></script>
 </body>
